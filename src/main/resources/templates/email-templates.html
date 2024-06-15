@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Templates - Help Find Maria</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script>
+        function copyToClipboard(id) {
+            var copyText = document.getElementById(id);
+            var range = document.createRange();
+            range.selectNode(copyText);
+            window.getSelection().removeAllRanges(); // clear current selection
+            window.getSelection().addRange(range); // to select text
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges(); // to deselect
+        }
+    </script>
+</head>
+<body>
+<header class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/images/logo.png" alt="Help Find Maria" class="logo">
+            <span class="navbar-brand-text">Help Find Maria</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">About Maria</a></li>
+                <li class="nav-item"><a class="nav-link" href="/email-templates">Email Templates</a></li>
+                <li class="nav-item"><a class="nav-link" href="/submit-tip">Submit a Tip</a></li>
+                <li class="nav-item"><a class="nav-link" href="/get-involved">Get Involved</a></li>
+                <li class="nav-item"><a class="nav-link" href="/news">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="/resources">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<main class="container mt-5">
+    <section class="email-templates">
+        <h2>Email Templates</h2>
+        <p>Use the following email templates to contact news outlets, authorities, and other organizations to help spread the word about Maria's disappearance. You can edit the templates as needed and click the copy button to copy the email content.</p>
+
+        <div class="template mb-4 p-3 bg-light rounded">
+            <div class="d-flex justify-content-between">
+                <h3>Template 1: Contacting News Outlets</h3>
+                <button class="btn btn-secondary" onclick="copyToClipboard('template1')">Copy</button>
+            </div>
+            <div id="template1" contenteditable="true" class="p-3 bg-white rounded border">
+                <p><strong>Subject:</strong> Urgent: Missing 12-Year-Old Maria Gomez-Perez</p>
+                <p><strong>Body:</strong></p>
+                <p>Dear [News Outlet],</p>
+                <p>I am writing to inform you about the urgent case of a missing 12-year-old girl, Maria Gomez-Perez, who disappeared on May 29th in Gainesville, GA. Maria was last seen near her home on Westside Drive. She is 5 feet 3 inches tall, weighs between 100 to 110 pounds, and has long black hair and brown eyes. She was wearing a blue t-shirt and black jeans at the time of her disappearance.</p>
+                <p>Her family and the local community are desperate for her safe return and have been tirelessly working to spread awareness and gather any information that could lead to her whereabouts. Your coverage and support in spreading the word about Maria's disappearance could be crucial in bringing her home safely.</p>
+                <p>Please find additional details about her case at the following link: <a href="https://www.gainesvilletimes.com/news/badge-bar/latest-search-maria-gomez-perez-missing-gainesville-girl/">Hall County authorities continue search for missing Gainesville girl</a>.</p>
+                <p>Thank you for your attention and assistance in this matter.</p>
+                <p>Sincerely,</p>
+                <p>[Your Name]</p>
+            </div>
+        </div>
+
+        <div class="template mb-4 p-3 bg-light rounded">
+            <div class="d-flex justify-content-between">
+                <h3>Template 2: Contacting Community Organizations</h3>
+                <button class="btn btn-secondary" onclick="copyToClipboard('template2')">Copy</button>
+            </div>
+            <div id="template2" contenteditable="true" class="p-3 bg-white rounded border">
+                <p><strong>Subject:</strong> Community Support Needed: Missing 12-Year-Old Maria Gomez-Perez</p>
+                <p><strong>Body:</strong></p>
+                <p>Dear [Community Organization],</p>
+                <p>I am reaching out to seek your support in the case of Maria Gomez-Perez, a 12-year-old girl who went missing on May 29th in Gainesville, GA. Maria was last seen near her home on Westside Drive. She is 5 feet 3 inches tall, weighs between 100 to 110 pounds, and has long black hair and brown eyes. She was wearing a blue t-shirt and black jeans at the time of her disappearance.</p>
+                <p>Our community is deeply concerned and has been actively searching for Maria. We are requesting your organization’s support in spreading awareness and gathering information that could help find her. Your involvement could make a significant difference in bringing Maria home safely.</p>
+                <p>Thank you for your time and consideration.</p>
+                <p>Sincerely,</p>
+                <p>[Your Name]</p>
+            </div>
+        </div>
+
+        <section class="news-contacts mt-5">
+            <h3>Major News Organizations' Emails</h3>
+            <p>You can use the following email addresses to send the templates to major news organizations:</p>
+            <ul>
+                <li>CNN: <a href="mailto:cnn.tips@cnn.com">cnn.tips@cnn.com</a></li>
+                <li>MSNBC: <a href="mailto:msnbc.tips@nbcuni.com">msnbc.tips@nbcuni.com</a></li>
+                <li>CBS: <a href="mailto:cbs.tips@cbsnews.com">cbs.tips@cbsnews.com</a></li>
+                <li>ABC: <a href="mailto:abc.tips@abcnews.com">abc.tips@abcnews.com</a></li>
+                <li>NBC: <a href="mailto:nbc.tips@nbcnews.com">nbc.tips@nbcnews.com</a></li>
+                <li>Fox News: <a href="mailto:foxnews.tips@foxnews.com">foxnews.tips@foxnews.com</a></li>
+                <li>BBC: <a href="mailto:bbc.tips@bbc.co.uk">bbc.tips@bbc.co.uk</a></li>
+            </ul>
+        </section>
+    </section>
+</main>
+<footer class="footer-content bg-primary text-white mt-5 p-4">
+    <div class="container text-center">
+        <p>&copy; 2024 Help Find Maria. All rights reserved.</p>
+        <p>
+            <a href="https://twitter.com/HelpFindMaria" target="_blank" class="text-white">Twitter</a> |
+            <a href="https://www.facebook.com/HelpFindMaria" target="_blank" class="text-white">Facebook</a> |
+            <a href="https://www.instagram.com/HelpFindMaria" target="_blank" class="text-white">Instagram</a>
+        </p>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" integrity="sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

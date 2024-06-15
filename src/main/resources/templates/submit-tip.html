@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Tip - Help Find Maria</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/images/logo.png" alt="Help Find Maria" class="logo">
+            <span class="navbar-brand-text">Help Find Maria</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">About Maria</a></li>
+                <li class="nav-item"><a class="nav-link" href="/email-templates">Email Templates</a></li>
+                <li class="nav-item"><a class="nav-link" href="/submit-tip">Submit a Tip</a></li>
+                <li class="nav-item"><a class="nav-link" href="/get-involved">Get Involved</a></li>
+                <li class="nav-item"><a class="nav-link" href="/news">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="/resources">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<main class="container mt-5">
+    <section class="submit-tip">
+        <h2>Submit a Tip</h2>
+        <p>If you have any information that might help find Maria, please provide your tip below. You can choose to remain anonymous if you prefer.</p>
+
+        <!-- Success message -->
+        <div id="success-message" class="alert alert-success" role="alert" style="display: none;">
+            Your tip has been successfully submitted. Thank you for your help!
+        </div>
+
+        <form id="tipForm" method="post" action="/submit-tip" class="p-4 bg-light rounded border">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name (optional)">
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email (optional)">
+            </div>
+            <div class="form-group">
+                <label for="tip">Your Tip</label>
+                <textarea class="form-control" id="tip" name="tip" rows="5" required></textarea>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="anonymous" name="anonymous">
+                <label class="form-check-label" for="anonymous">Submit anonymously</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Tip</button>
+        </form>
+    </section>
+</main>
+<footer class="footer-content bg-primary text-white mt-5 p-4">
+    <div class="container text-center">
+        <p>&copy; 2024 Help Find Maria. All rights reserved.</p>
+        <p>
+            <a href="https://twitter.com/HelpFindMaria" target="_blank" class="text-white">Twitter</a> |
+            <a href="https://www.facebook.com/HelpFindMaria" target="_blank" class="text-white">Facebook</a> |
+            <a href="https://www.instagram.com/HelpFindMaria" target="_blank" class="text-white">Instagram</a>
+        </p>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" integrity="sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('success')) {
+            document.getElementById('success-message').style.display = 'block';
+        }
+    });
+</script>
+</body>
+</html>

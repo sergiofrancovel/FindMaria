@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Maria - Help Find Maria</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/images/logo.png" alt="Help Find Maria" class="logo">
+            <span class="navbar-brand-text">Help Find Maria</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">About Maria</a></li>
+                <li class="nav-item"><a class="nav-link" href="/email-templates">Email Templates</a></li>
+                <li class="nav-item"><a class="nav-link" href="/submit-tip">Submit a Tip</a></li>
+                <li class="nav-item"><a class="nav-link" href="/get-involved">Get Involved</a></li>
+                <li class="nav-item"><a class="nav-link" href="/news">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="/resources">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<main class="container mt-5">
+    <section class="about-maria">
+        <h2>About Maria</h2>
+        <img src="/images/maria.jpg" alt="Maria Gomez-Perez" class="img-fluid rounded mx-auto d-block mb-4" style="max-width: 300px;">
+        <p>Maria Gomez-Perez is a 12-year-old girl who went missing on May 29th. She was last seen in Gainesville, GA, wearing a blue t-shirt and black jeans. Maria is known for her bright smile and kind heart. She loves playing soccer and spending time with her family. Maria’s disappearance has deeply affected her community, and everyone is working tirelessly to bring her home safely.</p>
+        <p>Maria's family is devastated by her disappearance and is pleading for anyone with information to come forward.</p>
+        <p>On the day she went missing, Maria was seen near her school. Surveillance footage shows her talking to an unknown person. If you have any information about Maria’s whereabouts, please <a href="mailto:publicinformation@hallcounty.org">contact the Hall County Sheriff's Office</a> or <a href="/submit-tip">send an anonymous tip through our website</a>.</p>
+    </section>
+    <section class="gallery mt-5">
+        <h3>Photo Gallery</h3>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="/images/maria-photo-1.png" alt="Maria playing soccer" class="img-fluid rounded">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="/images/maria-photo-2.png" alt="Maria with family" class="img-fluid rounded">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="/images/maria-photo-3.png" alt="Maria at a local event" class="img-fluid rounded">
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer-content bg-primary text-white mt-5 p-4">
+    <div class="container text-center">
+        <p>&copy; 2024 Help Find Maria. All rights reserved.</p>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" integrity="sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
