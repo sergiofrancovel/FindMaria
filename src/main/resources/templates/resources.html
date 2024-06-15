@@ -39,8 +39,8 @@
         <div class="resource-item mb-4 p-4 bg-light rounded border">
             <h3>Local Authorities</h3>
             <p>Contact the Hall County Sheriff's Office if you have any information about Maria's whereabouts.</p>
-            <p><strong>Phone:</strong> (123) 456-7890</p>
-            <a href="https://hallcountysheriffsoffice.com" class="btn btn-primary" target="_blank">Visit Website</a>
+            <p><strong>Phone:</strong> 770-536-8812</p>
+            <a href="https://www.hallcounty.org/168/Sheriffs-Office" class="btn btn-primary" target="_blank">Visit Website</a>
         </div>
 
         <div class="resource-item mb-4 p-4 bg-light rounded border">
@@ -52,34 +52,43 @@
         <div class="resource-item mb-4 p-4 bg-light rounded border">
             <h3>Search Tips</h3>
             <p>Learn how you can assist in the search efforts. This guide provides tips on organizing and participating in search parties, as well as safety precautions to take.</p>
-            <a href="https://www.example.com/search-tips" class="btn btn-primary" target="_blank">Read Search Tips</a>
+            <a href="https://whaleforensics.com/blog/the-ultimate-guide-to-finding-missing-persons--expert-tips-and-strategies" class="btn btn-primary" target="_blank">Read Search Tips</a>
         </div>
 
         <div class="resource-item mb-4 p-4 bg-light rounded border">
             <h3>Support Services for Families</h3>
             <p>Support services are available for families dealing with the disappearance of a loved one. These services offer counseling, support groups, and other resources.</p>
-            <a href="https://www.example.com/family-support" class="btn btn-primary" target="_blank">Get Support</a>
+            <a href="https://www.missingkids.org/support" class="btn btn-primary" target="_blank">Get Support</a>
         </div>
 
         <div class="resource-item mb-4 p-4 bg-light rounded border">
             <h3>Missing Person Organizations</h3>
             <p>There are several organizations dedicated to finding missing persons and supporting their families. They provide resources, advocacy, and support services.</p>
-            <a href="https://www.example.com/missing-person-orgs" class="btn btn-primary" target="_blank">Learn More</a>
+            <a href="https://namus.nij.ojp.gov/" class="btn btn-primary" target="_blank">Learn More</a>
+        </div>
+
+        <div class="resource-item mb-4 p-4 bg-light rounded border">
+            <h3>Print This Poster</h3>
+            <p>Help spread the word by printing and distributing this poster of Maria.</p>
+            <a href="/images/bolo.jpg" class="btn btn-primary" target="_blank" onclick="printPoster(); return false;">Print This Poster</a>
         </div>
     </section>
 </main>
 <footer class="footer-content bg-primary text-white mt-5 p-4">
     <div class="container text-center">
         <p>&copy; 2024 Help Find Maria. All rights reserved.</p>
-        <p>
-            <a href="https://twitter.com/HelpFindMaria" target="_blank" class="text-white">Twitter</a> |
-            <a href="https://www.facebook.com/HelpFindMaria" target="_blank" class="text-white">Facebook</a> |
-            <a href="https://www.instagram.com/HelpFindMaria" target="_blank" class="text-white">Instagram</a>
-        </p>
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" integrity="sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    function printPoster() {
+        var newWin = window.open("/images/bolo.jpg", "_blank");
+        newWin.onload = function() {
+            newWin.print();
+        };
+    }
+</script>
 </body>
 </html>
