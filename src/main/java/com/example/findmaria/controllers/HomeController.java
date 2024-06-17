@@ -16,9 +16,11 @@ import java.io.IOException;
 
 @Controller
 public class HomeController {
+    int counter=1;
 
     @GetMapping("/")
     public String home(Model model) {
+        System.out.println(counter++);
         return "index";
     }
 
@@ -57,9 +59,5 @@ public class HomeController {
         return "resources";
     }
 
-    @GetMapping("/contact")
-    public String contact(Model model) {
-        return "contact";
-    }
 }
 

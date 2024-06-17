@@ -7,6 +7,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.validation.Valid;
+
 @Controller
 @Validated
 public class SearchPartyController {
@@ -15,9 +17,9 @@ public class SearchPartyController {
     private EmailService emailService;
 
     @PostMapping("/submit-search-party")
-    public String submitSearchParty(@RequestParam(required = false) String name,
-                                    @RequestParam(required = false) String email,
-                                    @RequestParam(required = false, defaultValue = "false") boolean anonymous) {
+    public String submitSearchParty(@Valid @RequestParam(required = false) String name,
+                                    @Valid @RequestParam(required = false) String email,
+                                    @Valid @RequestParam(required = false, defaultValue = "false") boolean anonymous) {
         emailService.sendEmail(name, email);
         return "redirect:/search-party-signup?success=true";
     }

@@ -46,4 +46,12 @@ public class EmailService {
         mailSender.send(message);
     }
 
+    public void sendEmail(String name, String subject, String content) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(EMAIL_USERNAME); // Replace with your actual email address
+        message.setSubject(subject);
+        message.setText(content);
+        mailSender.send(message);
+    }
+
 }
