@@ -49,6 +49,16 @@
         </div>
 
         <div class="involvement-section mb-4 p-4 bg-light rounded border">
+            <h3>Get Free Yard Signs!</h3>
+            <p>We're offering free yard signs for people to place on their property or a busy location to help spread the word. The free yard signs are available at:</p>
+            <p>
+                912 Atlanta Hwy. Gainesville, GA 30501<br>
+                <a href="#" class="maps-link" data-address="912 Atlanta Hwy. Gainesville, GA 30501" data-type="apple">Apple Maps</a> |
+                <a href="#" class="maps-link" data-address="912 Atlanta Hwy. Gainesville, GA 30501" data-type="google">Google Maps</a>
+            </p>
+        </div>
+
+        <div class="involvement-section mb-4 p-4 bg-light rounded border">
             <h3>Spread Awareness on Social Media</h3>
             <p>Share information about Maria's disappearance on your social media platforms. Use the hashtag #HelpFindMaria to help spread the word.</p>
             <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="https://helpfindmaria.com/">
@@ -73,14 +83,15 @@
 
         <div class="involvement-section mb-4 p-4 bg-light rounded border">
             <h3>Donate to Support Search Efforts</h3>
-            <p>Unfortunately, the donate feature is not supported right now. We will update this page once it's available.</p>
+            <p>We are currently only accepting donations from businesses that are able to contribute to the cause. If your business wants to contribute, please call:</p>
+            <p><a href="tel:7702979550">770-297-9550</a></p>
         </div>
 
         <div class="involvement-section mb-4 p-4 bg-light rounded border">
             <h3>Contact Local Authorities</h3>
             <p>If you have any information about Maria's whereabouts, please contact the Hall County Sheriff's Office or send an anonymous tip through our website.</p>
             <p>Email: <a href="mailto:sheriff@hallcounty.org">sheriff@hallcounty.org</a></p>
-            <p>Phone number: 770-531-6900</p>
+            <p>Phone number: <a href="tel:7705033232">770-503-3232</a> or <a href="tel:7705368812">770-536-8812</a></p>
             <button class="btn btn-primary" onclick="location.href='/submit-tip'">Submit a Tip</button>
         </div>
 
@@ -94,6 +105,31 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" integrity="sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    document.querySelectorAll('.maps-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var address = this.getAttribute('data-address');
+            var type = this.getAttribute('data-type');
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            var appleMapsURL = "https://maps.apple.com/?daddr=" + encodeURIComponent(address);
+            var googleMapsURL = "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(address);
 
+            if (type === 'apple') {
+                if (isMobile) {
+                    window.location.href = "maps://maps.apple.com/?daddr=" + encodeURIComponent(address);
+                } else {
+                    window.open(appleMapsURL, '_blank');
+                }
+            } else if (type === 'google') {
+                if (isMobile) {
+                    window.location.href = "geo:0,0?q=" + encodeURIComponent(address);
+                } else {
+                    window.open(googleMapsURL, '_blank');
+                }
+            }
+        });
+    });
+</script>
 </body>
 </html>
