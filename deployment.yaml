@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: find-maria
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: find-maria
+  template:
+    metadata:
+      labels:
+        app: find-maria
+    spec:
+      containers:
+        - name: find-maria
+          image: 10.109.0.156:5000/find-maria:latest
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+            limits:
+              memory: "1024Mi"
+              cpu: "1000m"
+          ports:
+            - containerPort: 8080

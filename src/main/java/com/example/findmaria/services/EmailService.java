@@ -1,5 +1,7 @@
 package com.example.findmaria.services;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
@@ -9,6 +11,8 @@ import org.apache.commons.lang3.StringEscapeUtils;
 
 @Service
 public class EmailService {
+    private static final Logger logger = LoggerFactory.getLogger(EmailService.class);
+
     @Autowired
     private JavaMailSender mailSender;
 
@@ -30,7 +34,12 @@ public class EmailService {
         sb.append("Tip: ").append(StringEscapeUtils.escapeHtml4(tip)).append('\n');
 
         message.setText(sb.toString());
-        mailSender.send(message);
+        try {
+            mailSender.send(message);
+            logger.info("Email sent successfully");
+        } catch (Exception e) {
+            logger.error("Error sending email: ", e);
+        }
     }
 
     public void sendEmail(String name, String email) {
@@ -43,7 +52,25 @@ public class EmailService {
         sb.append("Email: ").append(email).append("\n");
 
         message.setText(sb.toString());
-        mailSender.send(message);
+        try {
+            mailSender.send(message);
+            logger.info("Email sent successfully");
+        } catch (Exception e) {
+            logger.error("Error sending email: ", e);
+        }
+    }
+
+    public void sendEmail(String name, String subject, String content) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(EMAIL_USERNAME); // Replace with your actual email address
+        message.setSubject(subject);
+        message.setText(content);
+        try {
+            mailSender.send(message);
+            logger.info("Email sent successfully");
+        } catch (Exception e) {
+            logger.error("Error sending email: ", e);
+        }
     }
 
 }

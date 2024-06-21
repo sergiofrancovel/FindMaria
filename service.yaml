@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: find-maria
+spec:
+  selector:
+    app: find-maria
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
