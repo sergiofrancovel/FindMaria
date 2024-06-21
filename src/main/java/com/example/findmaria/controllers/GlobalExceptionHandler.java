@@ -1,27 +1,21 @@
 package com.example.findmaria.controllers;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.ui.Model;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.servlet.ModelAndView;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String handleValidationExceptions(MethodArgumentNotValidException ex, Model model) {
-        model.addAttribute("errorMessage", "Invalid input provided. Please correct the errors and try again.");
-        return "error";
-    }
+    private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @ExceptionHandler(Exception.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public String handleExceptions(Exception ex, Model model) {
-        model.addAttribute("errorMessage", "An error occurred. We're looking into " +
-                "this and will get it fixed as soon as possible.");
-        return "error";
+    public ModelAndView handleException(Exception exception) {
+        logger.error("Exception occurred: ", exception);
+        ModelAndView modelAndView = new ModelAndView("error");
+        modelAndView.addObject("errorMessage", exception.getMessage());
+        return modelAndView;
     }
 }
