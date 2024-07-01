@@ -19,9 +19,9 @@ public class EmailService {
     @Value("${EMAIL_USERNAME}")
     private String EMAIL_USERNAME;
 
-    public void sendMail(String name, String email, String tip, boolean anonymous) {
+    public void sendMailTip(String name, String email, String tip, boolean anonymous) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(EMAIL_USERNAME);
+        message.setTo("intelrequest@hallcounty.org");
         message.setSubject("New Tip Received");
 
         StringBuilder sb = new StringBuilder();

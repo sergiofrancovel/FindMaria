@@ -25,7 +25,7 @@ public class TipController {
             @Valid @RequestParam @NotBlank String tip,
             @Valid @RequestParam(required = false, defaultValue = "false") boolean anonymous) {
 
-        emailService.sendMail(name, email, tip, anonymous);
+        emailService.sendMailTip(name, email, tip, anonymous);
         return "redirect:/submit-tip?success=true";
     }
 }
