@@ -13,14 +13,14 @@ import javax.validation.Valid;
 @Validated
 public class SearchPartyController {
 
-    @Autowired
-    private EmailService emailService;
-
-    @PostMapping("/submit-search-party")
-    public String submitSearchParty(@Valid @RequestParam(required = false) String name,
-                                    @Valid @RequestParam(required = false) String email,
-                                    @Valid @RequestParam(required = false, defaultValue = "false") boolean anonymous) {
-        emailService.sendEmail(name, email);
-        return "redirect:/search-party-signup?success=true";
-    }
+//    @Autowired
+//    private EmailService emailService;
+//
+//    @PostMapping("/submit-search-party")
+//    public String submitSearchParty(@Valid @RequestParam(required = false) String name,
+//                                    @Valid @RequestParam(required = false) String email,
+//                                    @Valid @RequestParam(required = false, defaultValue = "false") boolean anonymous) {
+//        emailService.sendEmail(name, email);
+//        return "redirect:/search-party-signup?success=true";
+//    }
 }

@@ -21,43 +21,43 @@ public class HomeController {
     @GetMapping("/")
     public String home(Model model) {
         System.out.println(counter++);
-        return "index";
+        return "found";
     }
 
-    @GetMapping("/about")
-    public String about(Model model) {
-        return "about";
-    }
-
-    @GetMapping("/email-templates")
-    public String emailTemplates(Model model) {
-        return "email-templates";
-    }
-
-    @GetMapping("/submit-tip")
-    public String submitTip(Model model) {
-        return "submit-tip";
-    }
-
-    @GetMapping("/get-involved")
-    public String getInvolved(Model model) {
-        return "get-involved";
-    }
-
-    @GetMapping("/search-party-signup")
-    public String showSearchPartySignup() {
-        return "search-party-signup";
-    }
-
-    @GetMapping("/news")
-    public String news(Model model) {
-        return "news";
-    }
-
-    @GetMapping("/resources")
-    public String resources(Model model) {
-        return "resources";
-    }
+//    @GetMapping("/about")
+//    public String about(Model model) {
+//        return "about";
+//    }
+//
+//    @GetMapping("/email-templates")
+//    public String emailTemplates(Model model) {
+//        return "email-templates";
+//    }
+//
+//    @GetMapping("/submit-tip")
+//    public String submitTip(Model model) {
+//        return "submit-tip";
+//    }
+//
+//    @GetMapping("/get-involved")
+//    public String getInvolved(Model model) {
+//        return "get-involved";
+//    }
+//
+//    @GetMapping("/search-party-signup")
+//    public String showSearchPartySignup() {
+//        return "search-party-signup";
+//    }
+//
+//    @GetMapping("/news")
+//    public String news(Model model) {
+//        return "news";
+//    }
+//
+//    @GetMapping("/resources")
+//    public String resources(Model model) {
+//        return "resources";
+//    }
 
 }
 

@@ -15,27 +15,27 @@ import javax.validation.Valid;
 @Controller
 public class ContactController {
 
-    @Autowired
-    private EmailService emailService;
-
-    @GetMapping("/contact")
-    public String showContactForm() {
-        return "contact";
-    }
-
-    @Value("${EMAIL_USERNAME}")
-    private String EMAIL_USERNAME;
-
-    @PostMapping("/contact")
-    public String submitContactForm(@Valid @RequestParam("name") String name,
-                                    @Valid @RequestParam("email") String email,
-                                    @Valid @RequestParam("message") String message) {
-
-        String subject = "Contact Submission From " + name;
-        String content = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
-
-        emailService.sendEmail(EMAIL_USERNAME, subject, content);
-
-        return "redirect:/contact?success=true";
-    }
+//    @Autowired
+//    private EmailService emailService;
+//
+//    @GetMapping("/contact")
+//    public String showContactForm() {
+//        return "contact";
+//    }
+//
+//    @Value("${EMAIL_USERNAME}")
+//    private String EMAIL_USERNAME;
+//
+//    @PostMapping("/contact")
+//    public String submitContactForm(@Valid @RequestParam("name") String name,
+//                                    @Valid @RequestParam("email") String email,
+//                                    @Valid @RequestParam("message") String message) {
+//
+//        String subject = "Contact Submission From " + name;
+//        String content = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
+//
+//        emailService.sendEmail(EMAIL_USERNAME, subject, content);
+//
+//        return "redirect:/contact?success=true";
+//    }
 }

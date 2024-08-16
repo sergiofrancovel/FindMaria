@@ -15,17 +15,17 @@ import javax.validation.constraints.NotBlank;
 @Controller
 public class TipController {
 
-    @Autowired
-    private EmailService emailService;
-
-    @PostMapping("/submit-tip")
-    public String submitTip(
-            @Valid @RequestParam(required = false) @Email String email,
-            @Valid @RequestParam(required = false) String name,
-            @Valid @RequestParam @NotBlank String tip,
-            @Valid @RequestParam(required = false, defaultValue = "false") boolean anonymous) {
-
-        emailService.sendMailTip(name, email, tip, anonymous);
-        return "redirect:/submit-tip?success=true";
-    }
+//    @Autowired
+//    private EmailService emailService;
+//
+//    @PostMapping("/submit-tip")
+//    public String submitTip(
+//            @Valid @RequestParam(required = false) @Email String email,
+//            @Valid @RequestParam(required = false) String name,
+//            @Valid @RequestParam @NotBlank String tip,
+//            @Valid @RequestParam(required = false, defaultValue = "false") boolean anonymous) {
+//
+//        emailService.sendMailTip(name, email, tip, anonymous);
+//        return "redirect:/submit-tip?success=true";
+//    }
 }
