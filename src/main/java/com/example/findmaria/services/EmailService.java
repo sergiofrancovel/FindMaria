@@ -44,7 +44,7 @@ public class EmailService {
 
     public void sendEmail(String name, String email) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(EMAIL_USERNAME); // Replace with your actual email address
+        message.setTo(EMAIL_USERNAME); 
         message.setSubject("New Search Party Signup");
 
         StringBuilder sb = new StringBuilder();
@@ -62,7 +62,7 @@ public class EmailService {
 
     public void sendEmail(String name, String subject, String content) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(EMAIL_USERNAME); // Replace with your actual email address
+        message.setTo(EMAIL_USERNAME); 
         message.setSubject(subject);
         message.setText(content);
         try {
